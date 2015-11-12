@@ -12,7 +12,7 @@ class GamePlay {
 
     var grid: Grid<Gem>!
 
-    var poolOfGems = [Gem]()
+    var poolOfGems = [Gem]() //Creates pool of gems that will be reused instead of creating new ones
 
     var lineBeingDraged: DragLine!
 
@@ -66,6 +66,7 @@ class GamePlay {
         return fallingGems
     }
 
+    //Makes a gem fall down to the last empty spot
     private func fillEmptySlot(row: Int, column: Int) -> [Gem] {
         var fallingColumns = [Gem]()
         for nextRow in row + 1 ..< nbrOfRows {
