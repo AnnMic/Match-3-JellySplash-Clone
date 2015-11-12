@@ -39,15 +39,11 @@ class RemoveGemsTests: XCTestCase {
     }
     
     func testRemoveGems() {
-        let gem = gameplay.grid[0,0]!
         gameplay.gemsToRemove()
         
         XCTAssertNil(gameplay.grid[0,0], "gem should had been removed")
         XCTAssertNil(gameplay.grid[0,1], "gem should had been removed")
         XCTAssertNil(gameplay.grid[1,1], "gem should had been removed")
         XCTAssertNotNil(gameplay.grid[1,0], "gem should not have been removed")
-        
-        XCTAssertEqual(gem.row, -1, "The gem was removed, should have -1 as row")
-        
     }
 }
